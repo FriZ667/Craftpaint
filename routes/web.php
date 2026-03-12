@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ViewController;
 
 Route::get('/', function () {
     return view('index');
@@ -14,3 +15,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('setpeinture', [ViewController::class, 'setpeinture'])->name('setpeinture');
